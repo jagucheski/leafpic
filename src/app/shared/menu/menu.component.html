@@ -1,0 +1,8 @@
+<div [ngClass]="{'active-menu': isShow}">
+  <div class="menu-bar">
+    <i class="fa fa-close mb-3 pull-right" tabindex="0" (click)="toggle()" (keyup.space)="toggle()"></i>
+    <h4>LeafPic</h4>
+    <ng-content></ng-content>
+  </div>
+  <div class="overlay" (click)="toggle()" (keyup.space)="toggle()"></div>
+</div>

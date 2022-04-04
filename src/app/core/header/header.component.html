@@ -1,0 +1,54 @@
+<header class="fixed-top">
+  <nav class="navbar navbar-light bg-white">
+
+    <!--<a class="navbar-brand" [routerLink]="['']">
+      <i class="fa fa-leaf"></i>LeafPic
+    </a>-->
+
+    <!--Icone para acessar menu-->
+    <a class="navbar-brand">
+      <i tabindex="0" class="fa fa-bars mr-2"
+         (click)="menu.toggle()"
+         (keyup.space)="menu.toggle()" ></i>
+      LeafPic
+    </a>
+
+    <!--menu-->
+    <ap-menu #menu>
+      <ul class="list-unstyled">
+        <li>
+          <a showIfLogged [routerLink]="['p','add']" (click)="menu.toggle()" title="Upload" style="text-decoration:none; color:black">
+            <i class="fa fa-upload mr-2"></i>Upload
+          </a>
+        </li>
+        <li>
+          <a showIfLogged (click)="logout();menu.toggle()" title="Logout">
+            <i class="fa fa-sign-out mr-1"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </ap-menu>
+
+    <!--logout e user-->
+    <div *ngIf="(user$ | async) as user; else login">
+      <i class="fa fa-user-circle mr-2"></i>
+      <a class="mr-5">{{user?.name}}</a>
+      <a (click)="logout()" title="Logout">
+        <i class="fa fa-sign-out mr-1"></i>Logout
+      </a>
+    </div>
+    <ng-template #login>
+      <span class="navbar-text">
+        <a [routerLink]="['']">
+           <i class="fa fa-sign-in mr-2"></i>Login
+        </a>
+      </span>
+    </ng-template>
+  </nav>
+
+
+  <div class="fixed-top text-center">
+    <ap-loading ></ap-loading>
+    <ap-alert></ap-alert>
+  </div>
+</header>
