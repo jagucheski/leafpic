@@ -1,8 +1,22 @@
 # Leafpic
 
-
-Angular project - Developed for learning about it.<br />
+Angular project - Developed for learning about angular.<br/>
+It's an application of photos like instagram. That it can post photos, add comentay and likes.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+
+## Setup
+- Requirement: Node.js 8.X
+
+## Setup Api's
+After donwload the project, unzip api-windows.zip and log-server.zip
+(app/assets/api)to the folder that you want.<br/>
+To run this api's (api-windons and log-server) just use npm server on cmd.
+
+## Login
+
+Use a default user:<br/>
+ - username: maj<br/>
+ - password: 12345678
 
 ## Development server
 
